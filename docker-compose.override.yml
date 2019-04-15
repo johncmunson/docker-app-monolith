@@ -1,0 +1,48 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - FRONTEND_PORT=${FRONTEND_PORT}
+    ports:
+      # Necessary for the CRA dev-server to function properly
+      - "35729:35729"
+    # Start the CRA dev-server in development instead of serving from the /build folder with express
+    command: ["yarn", "start"]
+    volumes:
+      - ./frontend:/usr/src/app
+    environment:
+      - NODE_ENV=development
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        - BACKEND_PORT=${BACKEND_PORT}
+    volumes:
+      - ./backend:/usr/src/app
+    environment:
+      - NODE_ENV=development
+  database:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+      args:
+        - DATABASE_PORT=${DATABASE_PORT}
+    ports:
+      # expose port in development to be able to connect with a GUI like psequel
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+  proxy:
+    build: ./proxy
+    ports:
+      - "${DEV_PORT}:${PROXY_PORT}"
+    volumes:
+      - ./proxy:/etc/nginx
+  migrate:
+    build: ./migrate
+    volumes:
+      - ./migrate:/usr/src/app
+    environment:
+      - NODE_ENV=development

@@ -1,0 +1,36 @@
+{
+  "name": "authservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "common-tags": "^1.8.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "ioredis": "^4.6.2",
+    "isemail": "^3.2.0",
+    "jsonwebtoken": "^8.4.0",
+    "nanoid": "^2.0.1",
+    "nodemailer": "^6.1.0",
+    "nodemon": "^1.18.10",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.8.0",
+    "uuid": "^3.3.2",
+    "zxcvbn": "^4.4.2"
+  },
+  "devDependencies": {
+    "migrate": "^1.6.2"
+  }
+}

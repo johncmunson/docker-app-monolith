@@ -1,0 +1,39 @@
+version: '3'
+services:
+  frontend:
+    image: johncmunson/frontend:latest
+    restart: on-failure
+    env_file:
+      - .env
+  backend:
+    image: johncmunson/backend:latest
+    restart: on-failure
+    depends_on:
+      - database
+    env_file:
+      - .env
+      - secrets.env
+  database:
+    image: johncmunson/database:latest
+    restart: on-failure
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+  proxy:
+    image: johncmunson/proxy:latest
+    restart: on-failure
+    depends_on:
+      - frontend
+      - backend
+    env_file:
+      - .env
+  migrate:
+    image: johncmunson/migrate:latest
+    restart: on-failure
+    depends_on:
+      - database
+    env_file:
+      - .env
+volumes:
+  postgres-data:

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    environment:
+      - NODE_ENV=production
+  backend:
+    environment:
+      - NODE_ENV=production
+  # database:
+  proxy:
+    ports:
+      - "${PROD_PORT}:${PROXY_PORT}"
+  migrate:
+    environment:
+      - NODE_ENV=production
