@@ -1,3 +1,5 @@
+Note: this is a pretty cool new cloud service... https://render.com/. It might be easier than digital ocean for some things. Both of them are definitely better than AWS, which requires a team of DevOps thugs to do anything remotely useful.
+
 ### Goals for migrating to a more monolithic app
 
 - swap nginx for traefik
