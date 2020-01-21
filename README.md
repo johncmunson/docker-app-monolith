@@ -1,4 +1,4 @@
-### Status: this project and the `monolith` repo should be combined, taking the best parts from both, and then refining it. The goal is to end up with an ideal base for a monolithic application (frontend, backend, load balancer, database, and that's about it) that all runs on docker-compose.
+### Status: this project and the `todo-api` repo should be combined, taking the best parts from both, and then refining it. The goal is to end up with an ideal base for a monolithic application (frontend, backend, load balancer, database, and that's about it) that all runs on docker-compose.
 
 Note: this is a pretty cool new cloud service... https://render.com/. It might be easier than digital ocean for some things. Both of them are definitely better than AWS, which requires a team of DevOps thugs to do anything remotely useful.
 
