@@ -65,7 +65,7 @@ To understand the modified `docker-compose up` command we just ran, you will nee
 
 ### Database migrations
 
-When running `docker-compose up`, the migrations container will run all up migrations that have not already been applied when the container initializes. The migrations library, `node-migrate`, uses the `.migrate` by default to track migrations, but it also supports using a custom store which is what we are doing with the `migration-store.js` file... storing our migrations status in the database itself.
+When running `docker-compose up`, the migrations container will run all up migrations that have not already been applied when the container initializes. The migrations library, `node-migrate`, uses the `.migrate` file by default to track migrations, but it also supports using a custom store which is what we are doing with the `migration-store.js` file... storing our migrations status in the database itself.
 
 This allows us to run `docker-compose down -v` to nuke the entire app, database volumes included, and we won't have to remember to delete the `.migrate` file.
 
@@ -85,6 +85,8 @@ The nginx service is using a template file and a bash script to generate the ngi
 
 ### Helpful articles
 
+- [How to Manage Multiple System Configurations Using Docker Compose](https://pspdfkit.com/blog/2018/how-to-manage-multiple-system-configurations-using-docker-compose/)
+- [How to Use Docker Compose to Run Multiple Instances of a Service in Development](https://pspdfkit.com/blog/2018/how-to-use-docker-compose-to-run-multiple-instances-of-a-service-in-development/)
 - [How to Update a Single Running docker-compose Container](https://staxmanade.com/2016/09/how-to-update-a-single-running-docker-compose-container/)
 - [Run Multiple Docker Environments from the Same docker-compose File](https://staxmanade.com/2016/07/run-multiple-docker-environments--qa--beta--prod--from-the-same-docker-compose-file-/)
 - [An Easy Recipe for Creating a PostgreSQL Cluster with Docker Swarm](https://info.crunchydata.com/blog/an-easy-recipe-for-creating-a-postgresql-cluster-with-docker-swarm)
