@@ -1,6 +1,6 @@
 ### Status: this project and the `todo-api` repo should be combined, taking the best parts from both, and then refining it. The goal is to end up with an ideal base for a monolithic application (frontend, backend, load balancer, database, and that's about it) that all runs on docker-compose.
 
-Note: this is a pretty cool new cloud service... https://render.com/. It might be easier than digital ocean for some things. Both of them are probably better than AWS though for the single developer.
+Note: this is a pretty cool new cloud service... https://render.com/. It might be easier than Digital Ocean for some things. For the single developer, it may offer better DX than platforms like Digital Ocean and AWS.
 
 ### Goals for migrating to a more monolithic app
 
@@ -13,8 +13,8 @@ Note: this is a pretty cool new cloud service... https://render.com/. It might b
 
 ### Prerequisites
 
-- Install Docker.
-- Install node, npm, yarn. This isn't absolutely essential, but if you don't then you'll have to always be running commands from inside containers which is not always convenient.
+- Install Docker
+- Install node, npm, yarn
 - An account with a cloud hosting platform. This project is currently using Digital Ocean, but it should be trivial to switch to another platform such as AWS.
 
 ### Hacking in the dev environment
