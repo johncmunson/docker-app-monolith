@@ -20,7 +20,7 @@
     "ioredis": "^4.6.2",
     "isemail": "^3.2.0",
     "jsonwebtoken": "^8.4.0",
-    "nanoid": "^2.0.1",
+    "nanoid": "^3.1.31",
     "nodemailer": "^6.1.0",
     "nodemon": "^1.18.10",
     "passport": "^0.4.0",
